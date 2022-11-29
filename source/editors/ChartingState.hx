@@ -82,9 +82,10 @@ class ChartingState extends MusicBeatState
 		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
 		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
 		['Change Scroll Speed', "Value 1: Target value\nValue 2: Time it takes to change fully"],
-        ['Dodge Mechanic', "Activates the dodge mechanic"],
-		['tween zoom (start)', "lol"],
-		['tween zoom (end)', "lol"]
+                ['Dodge Mechanic', "Activates the dodge mechanic"],
+		['tween zoom (start)', "tweens the start"],
+		['tween zoom (end)', "no tweening allowed"]
+	//      ['flash da cola', "Flases a color bweeteen 0-92"]
 	];
 
 	var _file:FileReference;
@@ -163,11 +164,18 @@ class ChartingState extends MusicBeatState
 	#else //The grid gets all black when over 1/12 snap
 	var zoomList:Array<Float> = [
 		0.5,
+		0.10,
 		1,
+		1.25,
 		2,
 		4,
+		5,
+		6,
+		7,
 		8,
-		12
+		12,
+		16,
+		24
 	];
 	#end
 
