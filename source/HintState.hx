@@ -57,7 +57,7 @@ class HintState extends MusicBeatState
 
         vengeanceText = new FlxText(0, 0, FlxG.width, "", 20);
         vengeanceText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.RED, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        vengeanceText.text = 'He is seeking for VENGEANCE';
+        vengeanceText.text = 'There is a story to be told, Look for the noteblock, click and sing.';
         vengeanceText.borderSize = 1;
         vengeanceText.updateHitbox();
         vengeanceText.screenCenter();
@@ -67,7 +67,7 @@ class HintState extends MusicBeatState
 
         randomText = new FlxText(0, 0, FlxG.width, "", 20);
         randomText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.YELLOW, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        randomText.text = 'BLOXIAM was here';
+        randomText.text = 'Wind beats air, Why does orange not have a face?';
         randomText.borderSize = 1;
         randomText.updateHitbox();
         randomText.screenCenter();
@@ -77,7 +77,7 @@ class HintState extends MusicBeatState
 
         tipText = new FlxText(0, 0, FlxG.width, "", 20);
         tipText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.GRAY, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        tipText.text = 'Go look in the main menu, something hidden is waiting there for you';
+        tipText.text = 'Stop singing, nothing is in the main menu *wink* *wink*';
         tipText.borderSize = 1;
         tipText.updateHitbox();
         tipText.screenCenter();
@@ -87,7 +87,7 @@ class HintState extends MusicBeatState
 
         chosenText = new FlxText(0, 0, FlxG.width, "", 20);
         chosenText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-        chosenText.text = 'You have been CHOSEN';
+        chosenText.text = 'What about LEAF GREEN?';
         chosenText.borderSize = 1;
         chosenText.updateHitbox();
         chosenText.screenCenter();
@@ -99,7 +99,7 @@ class HintState extends MusicBeatState
         vengeanceText.cameras = [camOther];
         chosenText.cameras = [camChosen];
 
-        trace('hints lol');
+        trace('DONT DO AMOG US');
     }
 
     override function update(elapsed:Float)
