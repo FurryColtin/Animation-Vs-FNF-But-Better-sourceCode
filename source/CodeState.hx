@@ -45,36 +45,46 @@ class CodeState extends MusicBeatState
     codeInput.backgroundColor = FlxColor.TRANSPARENT;
     codeInput.callback = function(text,action){
       if(action=='enter'){
-        if(text.toLowerCase() == "the fourth day")
+        if(text.toLowerCase() == "leafgreen")
           {
-            startDaSong('absent');
+            startDaSong('stolen');
             FlxG.save.data.fatherUnlocked = true;
           }
-        else if(text.toLowerCase() == "hands")
+        else if(text.toLowerCase() == "completion")
           {
-            startDaSong('grab');
+            startDaSong('champion');
             FlxG.save.data.handsUnlocked = true;
           }
-        else if(text.toLowerCase() == "ben drowned")
+        else if(text.toLowerCase() == "luck")
         {
-            startDaSong('grab');
+            startDaSong('furrydance');
             FlxG.save.data.handsUnlocked = true;
         }
-        else if(text.toUpperCase() == "ascend") 
+        else if(text.toUpperCase() == "forgotten") 
           {
-            CoolUtil.browserLoad("https://www.youtube.com/watch?v=dQw4w9WgXcQ");
+            CoolUtil.browserLoad("https://www.youtube.com/watch?v=8nPE3rxQP9g");
           }
-        else if(text.toLowerCase() == "sex")
+        else if(text.toLowerCase() == "intro")
             {
-                //MP4Handler.playMP4("porn hub intro", lol);
+                trace("MP4Handler.playMP4intro, lol");
             }
-        else if(text.toLowerCase() == 'sussus drownus')
+        else if(text.toLowerCase() == 'fading')
           {
-            startDaSong('sussus-drownus');
+            noTxt = new FlxText(0, 0, 0, "who said anything about a monochrome cover", 32);
+                noTxt.setFormat("VCR OSD Mono", 36, FlxColor.RED, CENTER, SHADOW,FlxColor.BLACK);
+                noTxt.scale.set(3,3);
+                noTxt.screenCenter();
+                noTxt.y += 100;      
+                add(noTxt);
+                noTxt.visible =true;
+                new FlxTimer().start(0.7, function(tmr:FlxTimer)
+                {
+                    Sys.exit(0);
+                });
           }
-        else if(text.toLowerCase() == "ink demon")
+        else if(text.toLowerCase() == "red is furry")
             {
-                noTxt = new FlxText(0, 0, 0, "litterally no", 32);
+                noTxt = new FlxText(0, 0, 0, "agreed, but no song so now we crash.", 32);
                 noTxt.setFormat("VCR OSD Mono", 36, FlxColor.RED, CENTER, SHADOW,FlxColor.BLACK);
                 noTxt.scale.set(3,3);
                 noTxt.screenCenter();
@@ -86,7 +96,7 @@ class CodeState extends MusicBeatState
                     Sys.exit(0);
                 });
             }
-        else if(text.toLowerCase() == 'ten zie' || text.toLowerCase() == 'teensie' || text.toLowerCase() == 'tensie' || text.toLowerCase() == 'teen c' || text.toLowerCase() == 'teenzie' || text.toLowerCase() == 'teensi' || text.toLowerCase() == 'teenzi')
+        else if(text.toLowerCase() == 'crash' || text.toLowerCase() == 'coraline pengraph')
             {
                 Sys.exit(0);
             }
@@ -137,14 +147,11 @@ class CodeState extends MusicBeatState
     super.update(elapsed);
   }
   function startDaSong(songName:String = "", songName2:String = "") {
-    if (songName == 'sussus-drownus')
-      PlayState.SONG = Song.loadFromJson(songName, songName);
-    else
-      PlayState.SONG = Song.loadFromJson(songName + '-hard', songName);
+    PlayState.SONG = Song.loadFromJson(songName + '-hard', songName);
     PlayState.isStoryMode = true;
     PlayState.storyDifficulty = 2;
     PlayState.storyWeek = 699;
-    trace('CUR WEEK' + PlayState.storyWeek);
+    trace('CUR ' + PlayState.storyWeek);
     LoadingState.loadAndSwitchState(new PlayState());
   }
 }
