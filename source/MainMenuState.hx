@@ -58,8 +58,7 @@ class MainMenuState extends MusicBeatState
 
 	var bg:FlxSprite;
 
-	// Buttons, fuck you Ekical
-	// fuck you sovet!!!
+	// Button
 	var freeplaybutton:FlxSprite;
 
 	var creditsShittyButton:FlxSprite;
@@ -326,21 +325,22 @@ class MainMenuState extends MusicBeatState
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 		}
 
-		if (FlxG.save.data.unlockedSecret ==false)
+		if (FlxG.save.data.unlockedSecret == false)
 		{
-			secretItem.visible =false;
+			secretItem.visible = false;
 		}
 
-		if (FlxG.save.data.unlockedSecret ==false)
+		if (FlxG.save.data.unlockedSecret == false)
 		{
-			secretItem.visible =false;
+			secretItem.visible = false;
 		}
 
-		if (FlxG.save.data.unlockedSecret ==true)
+		if (FlxG.save.data.unlockedSecret == true)
 		{
-			secretItem.visible =true;
+			secretItem.visible = true;
 		}
-
+		
+		#if debug
 		if (FlxG.keys.justPressed.FIVE)
 		{
 			trace('Stickin: ' + FlxG.save.data.beatStickin);
@@ -349,10 +349,9 @@ class MainMenuState extends MusicBeatState
 			trace('Curselected: ' + curSelected);
 		}
 
-		#if debug
 		if (FlxG.keys.justPressed.ONE)
 		{
-			FlxG.save.data.beatStickin =false;
+			FlxG.save.data.beatStickin = false;
 			FlxG.save.flush();
 		}
 		if (FlxG.keys.justPressed.TWO)
