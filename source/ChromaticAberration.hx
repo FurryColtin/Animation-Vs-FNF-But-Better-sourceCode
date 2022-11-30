@@ -25,6 +25,7 @@ class ChromaticAberration extends FlxShader
 			toUse.r = col1.r;
 			toUse.g = col2.g;
 			toUse.b = col3.b;
+			//col3 - col1;
 			//float someshit = col4.r + col4.g + col4.b;
 
 			gl_FragColor = toUse;

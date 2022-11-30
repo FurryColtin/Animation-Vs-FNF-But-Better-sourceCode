@@ -24,11 +24,7 @@ class WarningState extends MusicBeatState
 		add(bg);
 
 		warnText = new FlxText(0, 0, FlxG.width,
-			"Hey there person man/woman   \n
-			This song contains an animated background and it may cause a headache,\n
-			Press Esc if you want to disable it or press Enter if you don't wanna disable it,\n
-			\n
-			Hope you enjoy this song",
+			"Press esc-",
 			32);
 		warnText.setFormat("VCR OSD Mono", 32, FlxColor.WHITE, CENTER);
 		warnText.screenCenter(Y);
@@ -37,22 +33,14 @@ class WarningState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-			if (controls.ACCEPT) {
-                PlayState.animatedbgdisable = false;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
-                PlayState.SONG = Song.loadFromJson('chosen', 'chosen');
-                LoadingState.loadAndSwitchState(new PlayState());
-                FlxTween.tween(warnText, {alpha: 0}, 1, {
-                });
-			}
-            else if (controls.BACK) 
+            if (controls.BACK) 
             {
                 {
-                    PlayState.animatedbgdisable = true;
+                    PlayState.animatedbgdisable = false;
                     FlxG.sound.play(Paths.sound('cancelMenu'));
                     PlayState.SONG = Song.loadFromJson('chosen', 'chosen');
                     LoadingState.loadAndSwitchState(new PlayState());
-                    FlxTween.tween(warnText, {alpha: 0}, 1, {
+                    FlxTween.tween(warnText, {alpha: 0}, 1.2, {
                     });
                 }
 		    }

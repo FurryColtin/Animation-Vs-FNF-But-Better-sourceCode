@@ -1,11 +1,3 @@
-
-// deez nuts
-// deez nuts
-// deez nuts
-// deez nuts
-// deez nuts
-// deez nuts
-
 // true
 
 package;
@@ -4799,6 +4791,7 @@ class PlayState extends MusicBeatState
 			switch(curStep)
 				{
 					case 800:
+						FlxTween.tween(vignette, {alpha: 1}, 0.6);
 						defaultCamZoom = 1;
 					case 816:
 						FlxTween.tween(vignette, {alpha: 1}, 0.2);
