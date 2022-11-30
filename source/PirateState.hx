@@ -36,7 +36,7 @@ class PirateState extends MusicBeatState
 		if(!leftState) {
 			if (controls.ACCEPT || controls.BACK) {
 				leftState = true;
-				CoolUtil.browserLoad("https://www.youtube.com/watch?v=H8ZH_mkfPUY");
+				CoolUtil.browserLoad("https://www.youtube.com/watch?v=H8ZH_mkfPUY"); // ridge song in fnf video
 				FlxG.sound.play(Paths.sound('cancelMenu'));
 			}
 		}

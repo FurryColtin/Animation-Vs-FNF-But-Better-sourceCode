@@ -4831,10 +4831,27 @@ class PlayState extends MusicBeatState
 					case 64:
 						perBeatFlash = true;
 						perBeatZoom = false;
-						health -= 3.245;
+						health -= 2.250;
 						cameraGlitch(FlxG.random.int(35, -40), FlxG.random.int(155, -160)); // sorry fan's of the og numbs
-						trace("so they tried to tell me to change 3.245 to 2.150 but i wont listen until v3 -the coder");
-						trace("also they told me to make it go past beat 64 but im too lazy :P -the coder");
+						trace("omg they will fire me if i dont change it to be nerfed OMFG -the coder");
+						trace("time to make it go to 95 beats now. -the coder");
+					case 69: // please dont laugh. 69 is a bad number because its a se*ual joke.
+						perBeatFlash = false;
+						perBeatZoom = true;
+						health += 1.125;
+						score -= 500000;
+						startCountdown();
+						cameraGlitch(FlxG.random.int(25, -40), FlxG.random.int(145, -160)); // sorry fan's of the og numbs
+						trace("hi -the coder");
+					case 79: // hi
+						perBeatFlash = false;
+						perBeatZoom = true;
+						health -= 0.3455;
+						score += 6;
+						startCountdown();
+						cameraGlitch(FlxG.random.int(22, -40), FlxG.random.int(143, -175)); // sorry fan's of the og numbs
+						trace("79 is the max ignore what i said before. -the coder");
+					
 				}
 			}
 		if (curSong.toLowerCase() == 'stickin to it') {
