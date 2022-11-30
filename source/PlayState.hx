@@ -1271,6 +1271,14 @@ class PlayState extends MusicBeatState
 		glitchEffect.updateHitbox();
 		glitchEffect.screenCenter();
 		if (curSong.toLowerCase() == 'chosen') add(glitchEffect);
+		if (curSong.toLowerCase() == 'broken')
+		{
+			vignette.color = FlxColor.ORANGE;
+			vignette.visible = false;
+			add(vignette);
+			glitchEffect.visible = false;
+			add(glitchEffect);
+		}
 
 		if (SONG.song.toLowerCase() == 'stickin to it') {
 			creditsBG = new FlxSprite(0, 0).makeGraphic(60, 12, FlxColor.LIME);
@@ -1345,7 +1353,7 @@ class PlayState extends MusicBeatState
 
 			creditsText = new FlxText(0, 0, FlxG.width, "", 20);
 			creditsText.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
-			creditsText.text = 'Make Some Noise - Surge SPB';
+			creditsText.text = 'HE IS TAKING HIS REVENGE ON ALL OF US HELP';
 			creditsText.borderSize = 1;
 			creditsText.scrollFactor.set();
 			creditsText.updateHitbox();
@@ -4787,6 +4795,48 @@ class PlayState extends MusicBeatState
 					yes();
 			}
 		}
+		if (curSong == 'Broken')
+			{
+				switch(curStep)
+				{
+					case 1:
+						trace("step 1 of broken we wanna know this for later");
+						vignette.alpha = 0;
+					case 15:
+						trace("ok now we do the vignette");
+						FlxTween.tween(vignette, {alpha: 1}, 0.5);
+						vignette.visible = true;
+						trace("vignette added");
+					case 35:
+						trace("step 35 here we alpha out the vignette to change its color")
+						FlxTween.tween(vignette, {alpha: 0}, 0.5)
+						trace("what step will vignette's alpha be done " + vignette.alpha);
+					case 40:
+						FlxTween.tween(vignette, {alpha: 1}, 0.5);
+						cameraGlitch(FlxG.random.int(40, -40), FlxG.random.int(160, -160));
+						health -= 1.5;
+						trace("hi");
+					case 52:
+						cameraGlitch(FlxG.random.int(40, -40), FlxG.random.int(160, -160));
+						defaultCamZoom = 1.4;
+						perBeatFlash = true;
+						health += 1.2;
+						trace("so this was step 52 next up is step 56.");
+					case 56:
+						perBeatFlash = false;
+						perBeatZoom = true;
+						health -= 1;
+						cameraGlitch(FlxG.random.int(35, -40), FlxG.random.int(155, -160)); // sorry fan's of the og numbs
+						trace("not sorry -the coder");
+					case 64:
+						perBeatFlash = true;
+						perBeatZoom = false;
+						health -= 3.245;
+						cameraGlitch(FlxG.random.int(35, -40), FlxG.random.int(155, -160)); // sorry fan's of the og numbs
+						trace("so they tried to tell me to change 3.245 to 2.150 but i wont listen until v3 -the coder");
+						trace("also they told me to make it go past beat 64 but im too lazy :P -the coder");
+				}
+			}
 		if (curSong.toLowerCase() == 'stickin to it') {
 			switch(curStep)
 				{
